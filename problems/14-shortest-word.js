@@ -14,8 +14,11 @@ console.log(shortestWord('do what you enjoy'));         // 'do'
 
 */
 
-let shortestWord = function(sentence) {
-  // Your code here
+let shortestWord = function (sentence) {
+  const words = sentence.split(" ");
+  return words.reduce((shortest, word) =>
+    word.length <= shortest.length ? word : shortest
+  );
 };
 
 // Your code here
@@ -26,4 +29,4 @@ try {
   module.exports = shortestWord;
 } catch (e) {
   module.exports = null;
-}
+}

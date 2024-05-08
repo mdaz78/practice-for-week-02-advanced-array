@@ -14,14 +14,20 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 */
 
-let unique = function(array) {
-    // Your code here
+let unique = function (array) {
+  return array.reduce((uniques, elem) => {
+    if (!uniques.includes(elem)) {
+      uniques.push(elem);
+    }
+
+    return uniques;
+  }, []);
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = unique;
+  module.exports = unique;
 } catch (e) {
-    module.exports = null;
-}
+  module.exports = null;
+}

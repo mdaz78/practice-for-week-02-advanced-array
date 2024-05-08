@@ -25,13 +25,16 @@ console.log(twoDimensionalProduct(arr2)); // 88
 
 */
 
-let twoDimensionalProduct = function(arr) {
-    // Your code here
+let twoDimensionalProduct = function (arr) {
+  return arr
+    .map((subArr) => subArr.reduce((product, el) => (product *= el), 1))
+    .reduce((prod, el) => prod * el, 1);
 };
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = twoDimensionalProduct;
+  module.exports = twoDimensionalProduct;
 } catch (e) {
-    module.exports = null;
+  module.exports = null;
 }
